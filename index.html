@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vacunas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        #tabla-resultados {
+            width: 100%;
+            margin-top: 20px;
+        }
+        #tabla-resultados th {
+            background-color: #007bff;
+            color: white;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        #tabla-resultados td {
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+        #seccion-resultados {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">Registro de Vacunas</h2>
+                
+                <!-- Formulario de Búsqueda -->
+                <form id="formulario-busqueda" class="mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select id="criterio-busqueda" class="form-select">
+                                <option value="">Seleccionar Criterio</option>
+                                <option value="nro">Número</option>
+                                <option value="nombre">Nombre y Apellido</option>
+                                <option value="referencia">Referencia</option>
+                                <!-- Añade más opciones según tus columnas -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <input 
+                                type="text" 
+                                id="valor-busqueda" 
+                                class="form-control" 
+                                placeholder="Ingrese valor a buscar"
+                                required
+                            >
+                        </div>
+                        <div class="col-md-4 d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-search"></i> Buscar
+                            </button>
+                            <button type="button" id="boton-cargar-todos" class="btn btn-secondary">
+                                <i class="bi bi-list-ul"></i> Cargar Todos
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Sección de Resultados -->
+                <div id="seccion-resultados" style="display: none;">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            Resultados de Búsqueda
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tabla-resultados" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Nro</th>
+                                            <th>Nombre y Apellido</th>
+                                            <th>Fecha Nacimiento</th>
+                                            <th>Dirección</th>
+                                            <th>Referencia</th>
+                                            <th>Madre</th>
+                                            <th>BCG</th>
+                                            <th>Hepatitis B</th>
+                                            <th>Penta 1</th>
+                                            <th>Penta 2</th>
+                                            <th>Penta 3</th>
+                                            <th>Penta R1</th>
+                                            <th>Penta R2</th>
+                                            <th>IPV 1</th>
+                                            <th>IPV 2</th>
+                                            <th>OPV 1</th>
+                                            <th>OPV R1</th>
+                                            <th>OPV R2</th>
+                                            <th>AA</th>
+                                            <th>SRP 1</th>
+                                            <th>SRP 2</th>
+                                            <th>TD 1</th>
+                                            <th>TD 2</th>
+                                            <th>TD 3</th>
+                                            <th>TD 4</th>
+                                            <th>TD 5</th>
+                                            <th>TD 6</th>
+                                            <th>Libro</th>
+                                            <th>Página</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Filas de resultados se generarán dinámicamente -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y Popper (opcional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Tu Script Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
